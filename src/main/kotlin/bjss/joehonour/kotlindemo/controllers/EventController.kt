@@ -1,5 +1,8 @@
 package bjss.joehonour.kotlindemo.controllers
 
+// common theme for concepts, start relating it to why you need this.
+// relate to pros, cons (developer ease, maintain, readability etc etc etc)
+
 import bjss.joehonour.kotlindemo.entities.Event
 import bjss.joehonour.kotlindemo.repository.EventRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -89,7 +92,3 @@ fun ApiEvent.toDomainEvent(): Event = Event(
 
 // 15. quick example of showing the null safety forcing not null, this is not normally recommended, just for demo
 fun Event.toApiEvent(): ApiEvent = ApiEvent(this.eventId!!, this.name, this.location, this.startTime, this.endTime)
-
-// TODO:
-// still need to show some of the more advanced pattern matching
-// object singletons (companion objects)
