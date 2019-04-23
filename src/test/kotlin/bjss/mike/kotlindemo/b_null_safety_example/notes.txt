@@ -1,0 +1,12 @@
+Is Optional bad?
+- it was really designed for streams and is useful there (see Joe's example)
+- it appears useful outside of streams to indicate nullability
+- but you still end up testing for the existence of the nullable object
+- doesn't work with primitives - forces boxing to primitive wrappers (such as Integer)
+- not much is gained over old fashioned null checks
+
+Can Java ever emulate Kotlin's nullable types?
+- Every base Kotlin class is non-nullable - e.g. class Engine is non-nullable
+- The nullable version extends the nullable base class - e.g. class Engine? extends Engine but allows null values
+- Java's type system has each base class as nullable and so could not be changed to work in the same
+  way as Kotlin and remain backwards compatible
