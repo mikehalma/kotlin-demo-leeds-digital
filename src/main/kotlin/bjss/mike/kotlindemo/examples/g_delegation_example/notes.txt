@@ -1,0 +1,22 @@
+Why?
+- best practise dictates that we should favour composition over inheritance
+- this allows us to code to interfaces (with composition) rather than tying ourselves to concrete implementations (with inheritance)
+- overusing inheritance falls firmly into the lessons learned category for experienced developers
+- this is a good example of how Kotlin encourages best practise using delegation to make composition easier
+
+Java
+- in Java you have to code delegation manually
+- this often involves implementing an entire interface and then writing boilerplate code to defer to a private implementation of the interface
+- see CargoWeightsJava - although most of the methods were generated
+
+Kotlin
+- in Kotlin delegation can be achieved with the "by" keyword
+- you can then override any methods you wish to, all others are passed to the delegator
+
+Guava
+- Guava provides a nice implementation in Java, which removes most of the boilerplate code
+- however, it has only been implemented for the Collection classes
+- it would be a huge job to implement this throughout Java
+
+Conclusion
+- This is one of the many small gains you get from Kotlin that would be extremely hard to "fix" in Java
