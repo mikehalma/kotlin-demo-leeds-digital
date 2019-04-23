@@ -1,0 +1,14 @@
+Other features of @Data
+- Lombok also allows to change accessors (private, package-private etc.)
+- Lombok respects non final and @NonNull properties
+- The constructor can be replaced with a static factory method
+- Can add @Accessors(fluent = true) to switch to fluent accessors (removes get)
+
+Cons
+- no equivalent to copy is available in Lombok
+- can be hard to debug without the relevant tooling
+
+Demo
+- remove final to see how the required args constructor is changed
+- add @Getter(AccessLevel.PRIVATE) to show how to set accessor level
+- add @Accessors(fluent = true) to the class to show fluent getters
