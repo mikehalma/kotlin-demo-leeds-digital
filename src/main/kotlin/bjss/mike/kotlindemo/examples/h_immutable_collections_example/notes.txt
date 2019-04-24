@@ -1,0 +1,24 @@
+Why?
+- Immutability makes it easier to reason about which parts of a system can change
+- This reduces unintended side effects, hence reducing bugs
+- It also helps immeasurably when thinking about multi-threading
+
+Java
+- There are system libraries that allow the creation of immutable collections
+- Unfortunately these are not enforced at compile time, only at run time
+- So you have to think carefully about immutable collections and remember to implement them
+
+Kotlin
+- In Kotlin all collections are immutable by default
+- This is enforced at compile time
+- You have to think carefully about mutability rather than immutability
+- This reflects modern thinking that mutability is the xception rather than the rule
+
+Guava
+- Similar to Java except that mutating operations are deprecated (in order to fulfil collection interfaces)
+- So still not enforced at compile time
+- But you get a clue due to the deprecated methods
+
+Conclusion
+- As Java is open / mutable by default, and backwards compatibility is essential, it is hard to see how the genie can be put back in the box
+- Kotlin being closed / immutable by default again encourages developers to use best practise
