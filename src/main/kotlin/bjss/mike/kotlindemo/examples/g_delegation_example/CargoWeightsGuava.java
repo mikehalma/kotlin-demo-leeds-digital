@@ -5,26 +5,26 @@ import com.google.common.collect.ForwardingList;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CargoWeightsGuava<T extends Integer> extends ForwardingList<T> {
+public class CargoWeightsGuava extends ForwardingList<Integer> {
 
-    private final List<T> delegate = new ArrayList();
-    private final List<T> overweightCargo = new ArrayList();
-    private final Integer MAX_WEIGHT = new Integer(1000);
+    private final List<Integer> delegate = new ArrayList();
+    private final List<Integer> overweightCargo = new ArrayList();
+    private final static int MAX_WEIGHT = 1000;
 
     @Override
-    protected List<T> delegate() {
+    protected List<Integer> delegate() {
         return delegate;
     }
 
     @Override
-    public boolean add(T weight) {
-        if (weight.intValue() > MAX_WEIGHT) {
+    public boolean add(Integer weight) {
+        if (weight > MAX_WEIGHT) {
             overweightCargo.add(weight);
         }
         return delegate.add(weight);
     }
 
-    public List<T> getOverweightCargo() {
+    public List<Integer> getOverweightCargo() {
         return overweightCargo;
     }
 }
